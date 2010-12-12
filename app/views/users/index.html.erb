@@ -1,0 +1,137 @@
+<% title "#{@title}" %>
+
+    <span id="right_content">
+
+      <div id="form_content">
+
+        <div id="form_content_header">
+
+          <span id="form_content_header_marketer_admin">
+          <!-- end #form_content_header_marketer_admin --></span>
+
+          <span id="form_content_header_body">
+          <!-- end #form_content_header_body --></span>
+
+          <span id="form_content_header_right">
+          <!-- end #form_content_header_right --></span>
+
+        <!-- end #form_content_header --></div>
+
+        <div id="form_content_body">
+
+          <div id="form_content_text">
+
+            <div id="content_body">
+
+              <% if @spec.photo.url(:snapshot) == "/photos/snapshot/missing.png" -%>
+
+                <br />
+
+                <h4>Upload a passport photo. Data size should be less than 500kb. Follow the Spec (edit) link.
+                <!-- end #photo_warning --></h4>
+
+              <% end -%>
+
+              <span id="picture_division">
+
+                <div id="spec_div_photo_holder">
+
+                  <div id="spec_div_photo">
+
+                    <% if @spec.photo.url(:snapshot) == "/photos/snapshot/missing.png" -%>
+
+                      <%= image_tag("/images/avatar.jpg") %>
+
+                    <% else -%>
+
+                      <%= image_tag @spec.photo.url(:snapshot) %>
+
+                    <% end -%>
+
+                  <!-- end .spec_div_photo --></div>
+                <!-- end .spec_div_photo_holder --></div>
+
+              <!-- end #picture_division --></span>
+
+              <span id="picture_division_gap">
+              <!-- end #picture_division_gap --></span>
+
+              <span id="personal_division">
+
+                <div id="full_name">
+                  <%= h @spec.full_name.or_else("Your Name") %>
+                <!-- end #full_name --></div>
+
+                <div id="occupation">
+                  <% if @spec.occupation %>
+                    <%= h @spec.occupation.or_else("Your Occupation") %>
+                  <% else %>
+                    Your Occupation
+                  <% end %>
+                <!-- end #occupation --></div>
+
+                <div id="location">
+                  <%= h @spec.location.or_else("Your Location") %>
+                <!-- end #location --></div>
+
+              <!-- end #personal_division --></span>
+
+              <div class="profile_link_gap">
+              <!-- end .profile_link_gap --></div>
+
+              <div id="profile_link">
+                Profile URL: <%= link_to profile_for(@user), profile_for(@user) %>
+              <!-- end #profile_link --></div>
+
+              <div class="profile_link_gap">
+              <!-- end .profile_link_gap --></div>
+
+              <div id="left_column">
+	              <div class="sidebar_box">
+	                <h2>
+	                  <span class="header">Basic User Info</span>
+	                  <span class="edit_link"><%= link_to "(edit)", edit_user_path(:current) %></span>
+	                  <br clear="all" />
+	                </h2>
+	                <div class="sidebar_box_contents">
+	                  <table>
+	                    <tr>
+	                      <td class="label">Username:</td>
+	                      <td><%= @user.username %></td>
+	                    </tr>
+	                    <tr>
+	                      <td class="label">Email:</td>
+	                      <td><%= @user.email %></td>
+	                    </tr>
+	                    <tr>
+	                      <td class="label">Password:</td>
+	                      <td>********</td>
+	                    </tr>
+	                  </table>
+	                </div>
+	              </div>
+                <div class="sidebar_box">
+                  <h2>
+                    <span class="header">Spec</span>
+                    <span class="edit_link">
+                      <%= link_to "(edit)", :controller => "specs", :action => "edit" %>
+                    </span>
+                    <br clear="all" />
+                  </h2>
+                  <div class="sidebar_box_contents">
+                    <table>
+                      <%= render :partial    => "specs/field_row", :collection => Spec::ALL_FIELDS %>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+            <br clear="all" />
+
+            <!-- end #content_body --></div>
+
+
+          <!-- end #form_content_text --></div>
+
+        <!-- end #form_content_body --></div>
+

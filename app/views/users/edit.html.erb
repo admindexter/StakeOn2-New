@@ -1,0 +1,41 @@
+<% title "#{@title}" %>
+
+    <span id="right_content">
+
+      <div id="form_content">
+
+        <div id="form_content_header">
+
+          <span id="form_content_header_edit_info">
+          <!-- end #form_content_header_edit_info --></span>
+
+          <span id="form_content_header_body">
+          <!-- end #form_content_header_body --></span>
+
+          <span id="form_content_header_right">
+          <!-- end #form_content_header_right --></span>
+
+        <!-- end #form_content_header --></div>
+
+        <div id="form_content_body">
+
+          <div id="form_content_text">
+
+            <div id="content_body">
+
+              <p id="form_direction">
+                <%= link_to 'Edit Your Spec Information', :controller => "specs", :action => "edit" %> |
+                <%= link_to 'Go To User Hub', :controller => "users", :action => "index" %>
+              </p>
+
+              <p>
+                <%= render :partial => 'form' %>
+              </p>
+
+            <!-- end #content_body --></div>
+
+
+          <!-- end #form_content_text --></div>
+
+        <!-- end #form_content_body --></div>
+

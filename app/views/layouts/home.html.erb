@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'index' %>
+    <%= yield(:head) %>
+  </head>
+
+<body>
+
+<div id="header_top">
+  <div id="user_nav_holder">
+
+    <span id="small_logo">
+      <%= link_to image_tag("stakeon2_small_logo.jpg"), home_path %>
+    <!-- end #small_logo --></span>
+
+    <span id="small_logo_gap">
+    <!-- end #small_logo_gap --></span>
+
+    <%- if show_title? -%>
+      <div id="header_title">
+        <%=h yield(:title) %>
+
+        <div id="user_nav">
+          <span id="user_welcome">
+            <% if @assigned %>
+              Hi <%= @assigned.username %>,
+            <% else %>
+              Hi Guest,
+            <% end %>
+          <!-- end #user_welcome --></span>
+
+          <% if current_user %>
+            <%= link_to "Edit basic info", edit_user_path(:current) %> or
+            <%= link_to "Logout", logout_path %>
+          <% else %>
+            <%= link_to "Sign Up As A StakeOn2 Marketer", new_user_path %> or
+            <%= link_to "Login As A StakeOn2 Marketer", login_path %>
+          <% end %>
+        <!-- end #user_nav --></div>
+      <!-- end #header_title --></div>
+    <%- end -%>
+
+  <!-- end #user_nav_holder --></div>
+
+<!-- end #header_top --></div>
+
+<div id="header">
+
+  <div id="flash_slide">
+  <!-- end #flash_slide --></div>
+
+<!-- end #header --></div>
+
+<div id="navigation">
+
+  <div id="navigation_holder">
+
+    <span class="button"><%= link_to_unless_current 'Home', home_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'Market Rules', marketer_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'Our Games', games_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'FAQ', faq_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'How To Play', front_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'News', presses_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'Gallery', galleries_path %>
+    <!-- end .button --></span>
+
+    <span class="button"><%= link_to_unless_current 'Contact', contact_path %>
+    <!-- end .button --></span>
+
+  <!-- end #navigation_holder --></div>
+
+<!-- end #navigation --></div>
+
+<div id="navigation_bottom">
+<!-- end #navigation_bottom --></div>
+
+<div id="content">
+
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%- end -%>
+
+  <%= yield %>
+
+<!-- end #content --></div>
+
+<div id="container">
+
+  <div id="container_holder">
+
+    <span id="winners_div">
+
+      <div id="winners_div_content">
+
+        <br /><br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+
+      <!-- end #winners_div_content --></div>
+
+      <div id="winners_div_button">
+
+        <%= link_to image_tag( "footer_view_more_button_normal.jpg", :mouseover => "/images/footer_view_more_button_highlight.jpg" ), winner_path %>
+
+      <!-- end #winners_div_button --></div>
+
+    <!-- end #winners_div --></span>
+
+    <span id="vendors_div">
+
+      <div id="vendors_div_content">
+
+        <br /><br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+        Coming soon...<br />
+
+      <!-- end #vendors_div_content --></div>
+
+      <div id="vendors_div_button">
+
+        <%= link_to image_tag( "footer_view_more_button_normal.jpg", :mouseover => "/images/footer_view_more_button_highlight.jpg" ), vendors_path %>
+
+      <!-- end #vendors_div_button --></div>
+
+    <!-- end #vendors_div --></span>
+
+    <span id="blog_div">
+
+      <div id="blog_div_content">
+
+        <br /><br />
+        Administrators<br />
+        <div id="blog_div_content_text">
+          This space will hold the last blog post made by any member of the StakeOn2 community.
+          Registered members are free to come online and post information and gists that involves
+          StakeOn2. Enjoy the services that StakeOn2 has to offer.
+        <!-- end #blog_div_content_text --></div>
+
+      <!-- end #blog_div_content --></div>
+
+      <div id="blog_div_button">
+
+        <%= link_to image_tag( "footer_view_more_button_normal.jpg", :mouseover => "/images/footer_view_more_button_highlight.jpg" ), blogs_path %>
+
+      <!-- end #blog_div_button --></div>
+
+    <!-- end #blog_div --></span>
+
+  <!-- end #footer_holder --></div>
+
+<!-- end #container --></div>
+
+<div id="footer">&copy; Grandada Integrated Services Limited 2010. All rights reserved.
+<!-- end #footer --></div>
+
+</body>
+</html>
+

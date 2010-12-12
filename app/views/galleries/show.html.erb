@@ -1,0 +1,58 @@
+<% title "#{@title}" %>
+
+    <span id="right_content">
+
+      <div id="form_content">
+
+        <div id="form_content_header">
+
+          <span id="form_content_header_gallery">
+          <!-- end #form_content_header_gallery --></span>
+
+          <span id="form_content_header_body">
+          <!-- end #form_content_header_body --></span>
+
+          <span id="form_content_header_right">
+          <!-- end #form_content_header_right --></span>
+
+        <!-- end #form_content_header --></div>
+
+        <div id="form_content_body">
+
+          <div id="form_content_text">
+
+            <div id="content_body">
+
+              <p></p>
+
+              <h4><%=h @gallery.title %></h4>
+
+              <div id="news_article_photo">
+                <div class="last_photo">
+                  <%= image_tag @gallery.photo.url(:preview) %>
+                </div>
+
+                <div id="news_article_photo_tag">
+                  <b><%=h @gallery.location %></b><br />
+                  <%=h @gallery.date_of_event %><br /><br />
+                  <%=h @gallery.photographer %><br /><br />
+                </div>
+              </div>
+
+              <p class="return_link">
+                <% if admin? %>
+                  <span><%= link_to 'Edit', edit_gallery_path(@gallery) %></span>
+                  <span> | </span>
+                  <span><%= link_to "Destroy", @gallery, :confirm => 'Are you sure?', :method => :delete %></span>
+                  <span> | </span>
+                <% end %>
+                <span><%= link_to 'View All', galleries_path %></span>
+              </p>
+
+            <!-- end #content_body --></div>
+
+
+          <!-- end #form_content_text --></div>
+
+        <!-- end #form_content_body --></div>
+
