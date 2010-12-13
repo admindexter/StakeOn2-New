@@ -12,7 +12,7 @@ set :password, "independence"
 
 # GIT information
 default_run_options[:pty] = true
-set :repository, "git@github.com:admindexter/StakeOn2.git"
+set :repository, "git@github.com:admindexter/StakeOn2-New.git"
 
 set :scm, "git"
 set :branch, "master"
