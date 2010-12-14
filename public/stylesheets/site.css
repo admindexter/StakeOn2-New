@@ -726,6 +726,11 @@ label {
     vertical-align:     middle;
 }
 
+#referral_reminder {
+    font-style:         italic;
+    color:              #5a5a5a;
+}
+
 
 /* Pagination and Return Link Styles */
 .event_manage {
