@@ -721,8 +721,10 @@ label {
 	padding:			5px;
 	width:              202px;
 	height:             202px;
+    text-align:         center;
+    display:            table-cell;
+    vertical-align:     middle;
 }
-
 
 
 /* Pagination and Return Link Styles */

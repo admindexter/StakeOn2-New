@@ -20,6 +20,7 @@
     <th>Account Name</th>
     <th>Account Number</th>
     <th>Teller Number</th>
+    <th>Referral</th>
   </tr>
   <% for spec in @specs %>
     <tr>
@@ -40,7 +41,7 @@
       <td><%=h spec.payment_method %></td>
       <td><%=h spec.account_name %></td>
       <td><%=h spec.account_number %></td>
-      <td><%=h spec.teller_number %></td>
+      <td><%=h spec.referral %></td>
       <td><%= link_to "Show", spec %></td>
       <td><%= link_to "Edit", edit_spec_path(spec) %></td>
       <td><%= link_to "Destroy", spec, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -49,3 +50,4 @@
 </table>
 
 <p><%= link_to "New Spec", new_spec_path %></p>
+

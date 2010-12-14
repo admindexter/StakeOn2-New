@@ -72,9 +72,14 @@
   <strong>Teller Number:</strong>
   <%=h @spec.teller_number %>
 </p>
+<p>
+  <strong>Referral:</strong>
+  <%=h @spec.referral %>
+</p>
 
 <p>
   <%= link_to "Edit", edit_spec_path(@spec) %> |
   <%= link_to "Destroy", @spec, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", specs_path %>
 </p>
+

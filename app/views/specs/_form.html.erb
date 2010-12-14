@@ -37,7 +37,10 @@
   </p>
   <p>
     <%= f.label :birthdate %><br />
-    <%= f.datetime_select :birthdate %>
+    <%= f.datetime_select :birthdate,
+                          :start_year => Spec::START_YEAR,
+                          :end_year => Time.now.year,
+                          :order => [:month, :day, :year] %>
   </p>
   <p>
     <%= f.label :state_of_origin %><br />
@@ -104,6 +107,10 @@
   <p>
     <%= f.label :teller_number %><br />
     <%= f.text_field :teller_number %>
+  </p>
+  <p>
+    <%= f.label :referral %><br />
+    <%= f.text_field :referral %>
   </p>
   <p>
     <%= f.label :photo %><br />
