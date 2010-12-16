@@ -16,6 +16,16 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <p><%= f.submit %></p>
+
+  <% if @title == "Edit Basic Profile Information" %>
+
+    <p><%= f.submit "Save Changes" %></p>
+
+  <% else %>
+
+    <p><%= f.submit "Sign Up" %></p>
+
+  <% end %>
+
 <% end %>
 
