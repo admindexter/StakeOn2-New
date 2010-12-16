@@ -637,6 +637,7 @@ label {
 }
 
 .articles_div_photo_holder {
+	float:				left;
 	background:         #c7c7c7;
 	border: 			1px solid #5a5a5a;
 	padding:			5px;
