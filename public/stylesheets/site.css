@@ -637,12 +637,14 @@ label {
 }
 
 .articles_div_photo_holder {
-	float:				left;
 	background:         #c7c7c7;
 	border: 			1px solid #5a5a5a;
 	padding:			5px;
 	width:              202px;
 	height:             202px;
+    text-align:         center;
+    display:            table-cell;
+    vertical-align:     middle;
 }
 
 .articles_div_photo {
