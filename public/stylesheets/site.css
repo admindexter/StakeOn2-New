@@ -259,14 +259,14 @@ label {
 	float:                      left;
 	width:                      348px;
 	height:                     72px;
-	background:                 url(../images/sign_up_as_a_stakeon2_marketer.jpg) no-repeat;
+	background:                 url(../images/sign_up_as_a_stakeon2_member.jpg) no-repeat;
 }
 
 #form_content_header_login {
 	float:                      left;
 	width:                      348px;
 	height:                     72px;
-	background:                 url(../images/login_as_a_stakeon2_marketer.jpg) no-repeat;
+	background:                 url(../images/stakeon2_member_login.jpg) no-repeat;
 }
 
 #form_content_header_frequently {
@@ -343,14 +343,14 @@ label {
 	float:                      left;
 	width:                      348px;
 	height:                     72px;
-	background:                 url(../images/marketer_administration_page.jpg) no-repeat;
+	background:                 url(../images/member_administration_page.jpg) no-repeat;
 }
 
 #form_content_header_spec_edit {
 	float:                      left;
 	width:                      348px;
 	height:                     72px;
-	background:                 url(../images/edit_marketer_spec_information.jpg) no-repeat;
+	background:                 url(../images/edit_member_spec_information.jpg) no-repeat;
 }
 
 #form_content_header_contact {
@@ -729,9 +729,22 @@ label {
     vertical-align:     middle;
 }
 
-#referral_reminder {
+.referral_reminder {
     font-style:         italic;
     color:              #5a5a5a;
+}
+
+#membership_role {
+    font-size:          18px;
+    margin:             10px 0 10px 0;
+    color:              #5a5a5a;
+}
+
+#membership_role_text {
+    font-size:          20px;
+    margin:             10px 0 10px 0;
+    color:              #b72123;
+    font-style:         italic;
 }
 
 

@@ -23,6 +23,17 @@
   <!-- end .spec_div_photo_holder --></div>
 
   <p>
+    <%= f.label :role %><span class="referral_reminder"> Please select your membership role! </span><br />
+    <%= radio_button :spec, :role, "Participant"   %> Game Participant
+    <%= radio_button :spec, :role, "Marketer" %> Marketer
+    <%= radio_button :spec, :role, "Networker" %> Networker Personnel
+
+    <% if admin? %>
+        <%= radio_button :spec, :role, "Administrator" %> Site Administrator
+    <% end %>
+
+  </p>
+  <p>
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </p>
@@ -109,7 +120,7 @@
     <%= f.text_field :teller_number %>
   </p>
   <p>
-    <%= f.label :referral %><span id="referral_reminder"> Please enter the name of the referrer that informed you! </span><br />
+    <%= f.label :referral %><span class="referral_reminder"> Please enter the name of the referrer that informed you! </span><br />
     <%= f.text_field :referral %>
   </p>
   <p>

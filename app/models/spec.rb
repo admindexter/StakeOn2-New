@@ -1,7 +1,7 @@
 class Spec < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :user_id, :first_name, :last_name, :gender, :birthdate, :state_of_origin, :local_government_area, :residential_address, :city, :state, :zip_code, :occupation, :mobile_number, :home_number, :state_of_participation, :payment_method, :bank_name, :account_name, :account_number, :teller_number, :referral, :photo
+  attr_accessible :user_id, :role, :first_name, :last_name, :gender, :birthdate, :state_of_origin, :local_government_area, :residential_address, :city, :state, :zip_code, :occupation, :mobile_number, :home_number, :state_of_participation, :payment_method, :bank_name, :account_name, :account_number, :teller_number, :referral, :photo
 
   has_attached_file :photo, :styles => { :thumbnail => "100x100>", :portrait => "150x150>",
                     :snapshot => "200x200", :medium => "180x180>", :standard => "300x300>",
@@ -9,9 +9,10 @@ class Spec < ActiveRecord::Base
   					        :url => "/assets/articles/:id/:style/:basename.:extension",
   					        :path => ":rails_root/public/assets/articles/:id/:style/:basename.:extension"
 
-  ALL_FIELDS = %w(first_name last_name gender birthdate state_of_origin local_government_area residential_address city state zip_code occupation mobile_number home_number state_of_participation payment_method bank_name account_name account_number teller_number referral)
+  ALL_FIELDS = %w(role first_name last_name gender birthdate state_of_origin local_government_area residential_address city state zip_code occupation mobile_number home_number state_of_participation payment_method bank_name account_name account_number teller_number referral)
 
   VALID_GENDERS = ["Male", "Female"]
+  VALID_ROLES = ["Participant", "Marketer", "Networker", "Administrator"]
   START_YEAR = 1900
   VALID_DATES = DateTime.new(START_YEAR)..DateTime.now
   ZIP_CODE_LENGTH = 5
@@ -20,6 +21,11 @@ class Spec < ActiveRecord::Base
                           :in => VALID_GENDERS,
                           :allow_nil => true,
                           :message => "must be male or female"
+
+  validates_inclusion_of  :role,
+                          :in => VALID_ROLES,
+                          :allow_nil => false,
+                          :message => "must be a participant, marketer or networker"
 
   validates_inclusion_of  :birthdate,
                           :in => VALID_DATES,

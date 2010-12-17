@@ -23,6 +23,38 @@
 
             <div id="content_body">
 
+            <% if @spec.role -%>
+
+              <div id="membership_role">
+
+                Membership Role:
+
+                <span id="membership_role_text">
+
+                  <% if @spec.role == "Marketer" -%>
+
+                    StakeOn2 Marketer
+
+                  <% elsif @spec.role == "Participant" -%>
+
+                    StakeOn2 Game Participant
+
+                  <% elsif @spec.role == "Networker" -%>
+
+                    StakeOn2 Network Personnel
+
+                  <% elsif @spec.role == "Administrator" -%>
+
+                    StakeOn2 Site Administrator
+
+                  <% end -%>
+
+                <!-- end #membership_role_text --></span>
+
+              <!-- end #membership_role --></div>
+
+            <% end -%>
+
               <% if @spec.photo.url(:snapshot) == "/photos/snapshot/missing.png" -%>
 
                 <br />
